@@ -460,20 +460,28 @@ int rp_AOpinReset() {
     return RP_OK;
 }
 
-int rp_AOpinSetValueRaw(int unsigned pin, uint32_t value) {
+int rp_AOpinSetValueRawFine(int unsigned pin, uint32_t value, uint32_t fine) {
     if (pin >= 4) {
         return RP_EPN;
     }
     if (value > ANALOG_OUT_MAX_VAL_INTEGER) {
         return RP_EOOR;
     }
-    iowrite32((value & ANALOG_OUT_MASK) << ANALOG_OUT_BITS, &ams->dac[pin]);
+    uint32_t fine_bit=0;
+    for (int i=0; i<fine; ++i) {
+        fine_bit = (fine_bit << 1) | 1;          
+    }      
+    iowrite32((((value & ANALOG_OUT_MASK) << ANALOG_OUT_BITS) | fine_bit), &ams->dac[pin]);
     return RP_OK;
 }
-
+int rp_AOpinSetValueRaw(int unsigned pin, uint32_t value) {
+    return rp_AOpinSetValueRawFine(pin,value,0);
+}
 int rp_AOpinSetValue(int unsigned pin, float value) {
     uint32_t value_raw = (uint32_t) (((value - ANALOG_OUT_MIN_VAL) / (ANALOG_OUT_MAX_VAL - ANALOG_OUT_MIN_VAL)) * ANALOG_OUT_MAX_VAL_INTEGER);
-    return rp_AOpinSetValueRaw(pin, value_raw);
+    uint32_t value_fine = (uint32_t) (ANALOG_OUT_BITS * ((float) (((value - ANALOG_OUT_MIN_VAL) / (ANALOG_OUT_MAX_VAL - ANALOG_OUT_MIN_VAL))
+             * ANALOG_OUT_MAX_VAL_INTEGER) - value_raw ));
+    return rp_AOpinSetValueRawFine(pin, value_raw, value_fine);
 }
 
 int rp_AOpinGetValueRaw(int unsigned pin, uint32_t* value) {
@@ -828,4 +836,3 @@ float rp_CmnCnvCntToV(uint32_t field_len, uint32_t cnts, float adc_max_v, uint32
 {
 	return cmn_CnvCntToV(field_len, cnts, adc_max_v, calibScale, calib_dc_off, user_dc_off);
 }
-
