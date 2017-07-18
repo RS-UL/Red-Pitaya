@@ -42,6 +42,7 @@ OBJECTS =	common.o \
 		calib.o \
 		spec_dsp.o \
 		spec_fpga.o \
+		counter.o \
 		rp.o
 
 OBJS = $(patsubst %$(OBJEXT), $(OBJECTS_DIR)/%$(OBJEXT), $(OBJECTS))

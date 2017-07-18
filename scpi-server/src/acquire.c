@@ -534,7 +534,7 @@ scpi_result_t RP_AcqTriggerLevelQ(scpi_t *context) {
             "trigger level: %s\n", rp_GetError(result));
         return SCPI_RES_ERR;
     }
-    value = value;
+    //value = value;
     // Return back result
     SCPI_ResultDouble(context, value);
 

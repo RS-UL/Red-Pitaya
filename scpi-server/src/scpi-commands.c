@@ -29,6 +29,8 @@
 #include "scpi/units.h"
 #include "scpi/parser.h"
 
+#include "counter.h"
+
 bool RST_executed = FALSE;
 
 /**
@@ -218,6 +220,63 @@ static const scpi_command_t scpi_commands[] = {
     {.pattern = "SOUR#:TRIG:SOUR", .callback            = RP_GenTriggerSource,},
     {.pattern = "SOUR#:TRIG:SOUR?", .callback           = RP_GenTriggerSourceQ,},
     {.pattern = "SOUR#:TRIG:IMM", .callback             = RP_GenTrigger,},
+
+	/* Counter */
+	{.pattern = "COUNTer:CMD", .callback					= RP_CounterSendCmd,},
+	/*Commands that can be sent:
+		"NONE" 		= RP_none
+	    "IDLE"		= RP_gotoIdle
+	    "RESET"		= RP_reset
+	    "COUNT"		= RP_countImmediately
+	    "TRIGCOUNT"	=  RP_countTriggered
+	    "TRIGger"	=  RP_trigger
+	 */
+	{.pattern = "COUNTer:STATE?", .callback				= RP_CounterGetState,},
+	/* States that can be asked for:
+		RP_idle 							= 0
+		RP_immediateCountingStart			= 1
+		RP_immediateCountingWaitForTimeout	= 2
+		RP_triggeredCountingWaitForTrigger	= 3
+		RP_triggeredCountingStore			= 4
+		RP_triggeredCountingPredelay		= 5
+		RP_triggeredCountingPrestore		= 6
+		RP_triggeredCountingWaitForTimeout	= 7
+	 */
+	{.pattern = "COUNTer:TIME", .callback					  = RP_CounterSetCountingTime,},
+	{.pattern = "COUNTer:TIME?", .callback					  = RP_CounterGetCountingTime,},
+	{.pattern = "COUNTer:COUNTS?", .callback				  = RP_CounterGetCounts,},
+	{.pattern = "COUNTer:BINS:NO", .callback				  = RP_CounterSetNumberOfBins,},
+	{.pattern = "COUNTer:BINS:NO?", .callback				  = RP_CounterGetNumberOfBins,},
+	{.pattern = "COUNTer:REPetitions", .callback			  = RP_CounterSetRepetitions,},
+	{.pattern = "COUNTer:REPetitions?", .callback			  = RP_CounterGetRepetitions,},
+	{.pattern = "COUNTer:DELAY", .callback					  = RP_CounterSetPredelay,},
+	{.pattern = "COUNTer:DELAY?", .callback					  = RP_CounterGetPredelay,},
+	{.pattern = "COUNTer:TRIGger:CONFiguration", .callback	  = RP_CounterSetTriggerConfig,},
+	{.pattern = "COUNTer:TRIGger:CONFiguration?", .callback	  = RP_CounterGetTriggerConfig,},
+	{.pattern = "COUNTer:BINS:SPLITted", .callback			  = RP_CounterSetBinsSplitted,},
+	{.pattern = "COUNTer:BINS:SPLITted?", .callback			  = RP_CounterGetBinsSplitted,},
+	{.pattern = "COUNTer:GATED", .callback					  = RP_CounterSetGatedCounting,},
+	{.pattern = "COUNTer:GATED?", .callback					  = RP_CounterGetGatedCounting,},
+	{.pattern = "COUNTer:BINS:ADDR?", .callback				  = RP_CounterGetBinAddress,},
+	{.pattern = "COUNTer:REPetitions:COUNTer?", .callback	  = RP_CounterGetRepetitionCounter,},
+	{.pattern = "COUNTer:BINS:DATA?", .callback				  = RP_CounterGetBinData,},
+	{.pattern = "COUNTer:BINS:RESET", .callback				  = RP_CounterResetBinDataPartially,},
+	{.pattern = "COUNTer:BINS:RESET:ALL", .callback           = RP_CounterResetBinData,},
+	{.pattern = "COUNTer:RESET", .callback                    = RP_CounterReset,},
+	{.pattern = "COUNTer:COUNT?", .callback                   = RP_CounterCount,},
+	{.pattern = "COUNTer:COUNT:SINGle?", .callback            = RP_CounterCountSingle,},
+	{.pattern = "COUNTer:TRIGgered", .callback                = RP_CounterSetTriggeredCounting,},
+    {.pattern = "COUNTer:TRIGgered?", .callback               = RP_CounterGetTriggeredCounting,},
+    {.pattern = "COUNTer:TRIGger:IMMediate", .callback        = RP_CounterTrigger,},
+    {.pattern = "COUNTer:NO?", .callback                      = RP_CounterGetNumCounters,},
+    {.pattern = "COUNTer:BINS:MAX?", .callback                = RP_CounterGetMaxBins,},
+    {.pattern = "COUNTer:DNA?", .callback        		      = RP_CounterGetDNA,},
+    {.pattern = "COUNTer:CLocK?", .callback        		      = RP_CounterGetClock,},
+	{.pattern = "COUNTer:WAITforstate", .callback  		      = RP_CounterWaitForState,},
+	{.pattern = "COUNTer:WRSC?", .callback  		     	  = RP_CounterWaitAndReadAndStartCounting,},
+	{.pattern = "COUNTer:CountOutput", .callback  		      = RP_CounterStartAnalogOutput,},
+	{.pattern = "COUNTer:StopOutput", .callback  		      = RP_CounterStopAnalogOutput,},
+
 
     SCPI_CMD_LIST_END
 };

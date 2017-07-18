@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<BillOfMaterials Version="1" Minor="2">
+	<IPInstance name="counterRam">
+		<FileSets>
+			<FileSet generator="xmdf_to_bom">
+				<File name="counterRam/blk_mem_gen_v7_3_readme.txt" type="ignore" timestamp="Tue Nov 08 14:46:39 2016" checksum="0">
+				</File>
+				<File name="counterRam/doc/blk_mem_gen_v7_3_vinfo.html" type="ignore" timestamp="Tue Nov 08 14:46:39 2016" checksum="0">
+				</File>
+				<File name="counterRam/doc/pg058-blk-mem-gen.pdf" type="ignore" timestamp="Tue Nov 08 14:46:40 2016" checksum="0">
+				</File>
+				<File name="counterRam/example_design/counterRam_exdes.ucf" type="ignore" timestamp="Tue Nov 08 14:46:39 2016" checksum="0">
+				</File>
+				<File name="counterRam/example_design/counterRam_exdes.vhd" type="ignore" timestamp="Tue Nov 08 14:46:39 2016" checksum="0">
+				</File>
+				<File name="counterRam/example_design/counterRam_exdes.xdc" type="ignore" timestamp="Tue Nov 08 14:46:39 2016" checksum="0">
+				</File>
+				<File name="counterRam/example_design/counterRam_prod.vhd" type="ignore" timestamp="Tue Nov 08 14:46:39 2016" checksum="0">
+				</File>
+				<File name="counterRam/implement/implement.bat" type="ignore" timestamp="Tue Nov 08 14:46:39 2016" checksum="0">
+				</File>
+				<File name="counterRam/implement/implement.sh" type="ignore" timestamp="Tue Nov 08 14:46:39 2016" checksum="0">
+				</File>
+				<File name="counterRam/implement/planAhead_ise.bat" type="ignore" timestamp="Tue Nov 08 14:46:39 2016" checksum="0">
+				</File>
+				<File name="counterRam/implement/planAhead_ise.sh" type="ignore" timestamp="Tue Nov 08 14:46:39 2016" checksum="0">
+				</File>
+				<File name="counterRam/implement/planAhead_ise.tcl" type="ignore" timestamp="Tue Nov 08 14:46:39 2016" checksum="0">
+				</File>
+				<File name="counterRam/implement/xst.prj" type="ignore" timestamp="Tue Nov 08 14:46:39 2016" checksum="0">
+				</File>
+				<File name="counterRam/implement/xst.scr" type="ignore" timestamp="Tue Nov 08 14:46:39 2016" checksum="0">
+				</File>
+				<File name="counterRam/simulation/addr_gen.vhd" type="ignore" timestamp="Tue Nov 08 14:46:39 2016" checksum="0">
+				</File>
+				<File name="counterRam/simulation/bmg_stim_gen.vhd" type="ignore" timestamp="Tue Nov 08 14:46:39 2016" checksum="0">
+				</File>
+				<File name="counterRam/simulation/bmg_tb_pkg.vhd" type="ignore" timestamp="Tue Nov 08 14:46:39 2016" checksum="0">
+				</File>
+				<File name="counterRam/simulation/checker.vhd" type="ignore" timestamp="Tue Nov 08 14:46:39 2016" checksum="0">
+				</File>
+				<File name="counterRam/simulation/counterRam_synth.vhd" type="ignore" timestamp="Tue Nov 08 14:46:39 2016" checksum="0">
+				</File>
+				<File name="counterRam/simulation/counterRam_tb.vhd" type="ignore" timestamp="Tue Nov 08 14:46:39 2016" checksum="0">
+				</File>
+				<File name="counterRam/simulation/data_gen.vhd" type="ignore" timestamp="Tue Nov 08 14:46:39 2016" checksum="0">
+				</File>
+				<File name="counterRam/simulation/functional/simcmds.tcl" type="ignore" timestamp="Tue Nov 08 14:46:39 2016" checksum="0">
+				</File>
+				<File name="counterRam/simulation/functional/simulate_isim.sh" type="ignore" timestamp="Tue Nov 08 14:46:39 2016" checksum="0">
+				</File>
+				<File name="counterRam/simulation/functional/simulate_mti.bat" type="ignore" timestamp="Tue Nov 08 14:46:39 2016" checksum="0">
+				</File>
+				<File name="counterRam/simulation/functional/simulate_mti.do" type="ignore" timestamp="Tue Nov 08 14:46:39 2016" checksum="0">
+				</File>
+				<File name="counterRam/simulation/functional/simulate_mti.sh" type="ignore" timestamp="Tue Nov 08 14:46:39 2016" checksum="0">
+				</File>
+				<File name="counterRam/simulation/functional/simulate_ncsim.sh" type="ignore" timestamp="Tue Nov 08 14:46:39 2016" checksum="0">
+				</File>
+				<File name="counterRam/simulation/functional/simulate_vcs.sh" type="ignore" timestamp="Tue Nov 08 14:46:39 2016" checksum="0">
+				</File>
+				<File name="counterRam/simulation/functional/ucli_commands.key" type="ignore" timestamp="Tue Nov 08 14:46:39 2016" checksum="0">
+				</File>
+				<File name="counterRam/simulation/functional/vcs_session.tcl" type="ignore" timestamp="Tue Nov 08 14:46:39 2016" checksum="0">
+				</File>
+				<File name="counterRam/simulation/functional/wave_mti.do" type="ignore" timestamp="Tue Nov 08 14:46:39 2016" checksum="0">
+				</File>
+				<File name="counterRam/simulation/functional/wave_ncsim.sv" type="ignore" timestamp="Tue Nov 08 14:46:39 2016" checksum="0">
+				</File>
+				<File name="counterRam/simulation/random.vhd" type="ignore" timestamp="Tue Nov 08 14:46:39 2016" checksum="0">
+				</File>
+				<File name="counterRam/simulation/timing/simcmds.tcl" type="ignore" timestamp="Tue Nov 08 14:46:39 2016" checksum="0">
+				</File>
+				<File name="counterRam/simulation/timing/simulate_isim.sh" type="ignore" timestamp="Tue Nov 08 14:46:39 2016" checksum="0">
+				</File>
+				<File name="counterRam/simulation/timing/simulate_mti.bat" type="ignore" timestamp="Tue Nov 08 14:46:39 2016" checksum="0">
+				</File>
+				<File name="counterRam/simulation/timing/simulate_mti.do" type="ignore" timestamp="Tue Nov 08 14:46:39 2016" checksum="0">
+				</File>
+				<File name="counterRam/simulation/timing/simulate_mti.sh" type="ignore" timestamp="Tue Nov 08 14:46:39 2016" checksum="0">
+				</File>
+				<File name="counterRam/simulation/timing/simulate_ncsim.sh" type="ignore" timestamp="Tue Nov 08 14:46:39 2016" checksum="0">
+				</File>
+				<File name="counterRam/simulation/timing/simulate_vcs.sh" type="ignore" timestamp="Tue Nov 08 14:46:39 2016" checksum="0">
+				</File>
+				<File name="counterRam/simulation/timing/ucli_commands.key" type="ignore" timestamp="Tue Nov 08 14:46:39 2016" checksum="0">
+				</File>
+				<File name="counterRam/simulation/timing/vcs_session.tcl" type="ignore" timestamp="Tue Nov 08 14:46:39 2016" checksum="0">
+				</File>
+				<File name="counterRam/simulation/timing/wave_mti.do" type="ignore" timestamp="Tue Nov 08 14:46:39 2016" checksum="0">
+				</File>
+				<File name="counterRam/simulation/timing/wave_ncsim.sv" type="ignore" timestamp="Tue Nov 08 14:46:39 2016" checksum="0">
+				</File>
+				<File name="counterRam.asy" type="asy" timestamp="Tue Nov 08 14:46:39 2016" checksum="0">
+				</File>
+				<File name="counterRam.ngc" type="ngc" timestamp="Tue Nov 08 14:46:40 2016" checksum="0">
+				</File>
+				<File name="counterRam.sym" type="asy" timestamp="Tue Nov 08 14:46:40 2016" checksum="0">
+				</File>
+				<File name="counterRam.vhd" type="vhdl" timestamp="Tue Nov 08 14:46:39 2016" checksum="0">
+				</File>
+				<File name="counterRam.vho" type="vho" timestamp="Tue Nov 08 14:46:39 2016" checksum="0">
+				</File>
+				<File name="counterRam.xco" type="xco" timestamp="Tue Nov 08 14:46:40 2016" checksum="0">
+				</File>
+				<File name="counterRam_xmdf.tcl" type="ignore" timestamp="Tue Nov 08 14:46:40 2016" checksum="0">
+				</File>
+				<File name="summary.log" type="ignore" timestamp="Tue Nov 08 14:46:39 2016" checksum="0">
+				</File>
+			</FileSet>
+		</FileSets>
+	</IPInstance>
+</BillOfMaterials>
+
